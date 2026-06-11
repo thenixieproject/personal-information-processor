@@ -124,7 +124,7 @@ void EducationInfo::setSchoolAddressInfo(SchoolInfo)
     cout << "Enter the city of " << schoolName << ": ";
     schoolAttended.setCity(schoolAttended.getCity());
     
-    cout << "Enter the state of " << schoolName << ": ";
+    cout << "Enter the state of " << schoolName << ": "; // TODO: Add subprompt to only allow 2 letter state code
     schoolAttended.setState(schoolAttended.getState());
     
     cout << "Enter the zip code of " << schoolName << ": ";

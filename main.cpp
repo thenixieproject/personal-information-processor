@@ -11,6 +11,11 @@
 
 using namespace std;
 
+// TODO: Add READ, UPDATE, and DELETE operations
+// TODO: Switch to a cleaner class setup, still using template and virtual functions where appropriate
+// TODO: Move content in FinalProjectDocumentation.pdf to README
+// TODO: Update FinalUML.drawio.pdf to new application flowchart and class style (do first)
+
 int main(int argc, char** argv)
 {
     // Define class objects
@@ -96,7 +101,7 @@ int main(int argc, char** argv)
             }
             try
             {
-                cout << "Did " << newPerson->getFirstName() << " graduate? ";
+                cout << "Did " << newPerson->getFirstName() << " graduate? "; // TODO: Add y/n to prompt
                 newEducation.setGraduated(newEducation.getGraduated());
             }
             catch(string &exception)
@@ -108,16 +113,16 @@ int main(int argc, char** argv)
             {
                 newEducation.setSchoolAddressInfo(newEducation.getSchoolAddressInfo());
             }
-            catch(...)
+            catch(string &exception)
             {
-                cerr << "Unknown Exception occurred." << endl;
+                cerr << "Error: " << &exception << endl;
             }
         }
         if(newPerson->getContactInfo() == true)
         {
             try
             {
-                cout << "Does " << newPerson->getFirstName() << " have a home phone: ";
+                cout << "Does " << newPerson->getFirstName() << " have a home phone: "; //TODO: add y/n to prompt
                 newContact.askHomePhone(newContact.getHasHomePhone());
             }
             catch(string &exception)
@@ -156,7 +161,7 @@ int main(int argc, char** argv)
             }
             try
             {
-                cout << "Does " << newPerson->getFirstName() << " have an address: ";
+                cout << "Does " << newPerson->getFirstName() << " have an address: "; // TODO: add y/n to prompt
                 newContact.askAddress(newContact.getHasAddress());
             }
             catch(string &exception)
@@ -171,7 +176,7 @@ int main(int argc, char** argv)
                 cout << "Please enter " << newPerson->getFirstName() << "'s city: ";
                 newAddress.setCity(newAddress.getCity());
                 
-                cout << "Please enter " << newPerson->getFirstName() << "'s state: ";
+                cout << "Please enter " << newPerson->getFirstName() << "'s state: "; // TODO add 2 letter state code to prompt
                 newAddress.setState(newAddress.getState());
                 
                 cout << "Please enter " << newPerson->getFirstName() << "'s zip code: ";
@@ -179,7 +184,7 @@ int main(int argc, char** argv)
             }
         }
         
-        //Output data
+        //Output data TODO: send this data to a file and correct output to be a lot nicer
         cout << newPerson->getFirstName() << " " << newPerson->getLastName() << endl << endl;
         if(newPerson->getContactInfo() == true)
         {
@@ -215,6 +220,7 @@ int main(int argc, char** argv)
         cin >> continuePrompt;
     }while(tolower(continuePrompt[0]) == 'y');
 
+    // TODO clean up memory pointers here upon every successful CREATE operation
     return 0;
 }
 
