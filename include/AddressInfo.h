@@ -1,6 +1,6 @@
 #ifndef ADDRESSINFO_H
 #define ADDRESSINFO_H
-#include "../ContactInfo.h"
+#include "ContactInfo.h"
 #include <iostream>
 
 using namespace std;

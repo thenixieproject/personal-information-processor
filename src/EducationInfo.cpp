@@ -1,5 +1,5 @@
 #include "../include/EducationInfo.h"
-#include "SchoolInfo.h"
+#include "../include/SchoolInfo.h"
 #include <iostream>
 #include <string>
 

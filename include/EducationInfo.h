@@ -2,7 +2,7 @@
 #define EDUCATIONINFO_H
 #include<string>
 #include<iostream>
-#include "../PersonData.h"
+#include "PersonData.h"
 #include "SchoolInfo.h"
 
 using namespace std;
