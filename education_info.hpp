@@ -8,8 +8,8 @@
 class EducationInfo : public AddressInfo<std::string> {
 public:
     EducationInfo() = default;
-    std::ostream& operator<< (std::ostream &out) const;
-    std::istream& operator>> (std::istream &in);
+    virtual std::ostream& operator<< (std::ostream &out) const;
+    virtual std::istream& operator>> (std::istream &in);
     void setDegreeType(std::string const &data) { degreeType = data; }
     void setGraduated(bool data) { graduated = data; }
     void setYearsAttended(int data) { yearsAttended = data; }

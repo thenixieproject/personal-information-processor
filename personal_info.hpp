@@ -9,8 +9,8 @@
 class PersonalInfo : public ContactInfo, public EducationInfo {
 public:
     PersonalInfo() = default;
-    std::ostream& operator<<(std::ostream &out) const;
-    std::istream& operator>>(std::istream &in);
+    std::ostream& operator<<(std::ostream &out) const override;
+    std::istream& operator>>(std::istream &in) override;
     void setFirstName(std::string data) override { firstName = data; }
     void setLastName(std::string data) override { lastName = data; }
     void setContact(bool data) { hasContact = data; }
