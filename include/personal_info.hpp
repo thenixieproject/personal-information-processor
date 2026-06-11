@@ -6,22 +6,22 @@
 #include <iostream>
 #include <string>
 
-class PersonalInfo : public ContactInfo, public EducationInfo {
+class PersonalInfo : protected ContactInfo, public EducationInfo {
 public:
     PersonalInfo() = default;
     std::ostream& operator<<(std::ostream &out) const override;
     std::istream& operator>>(std::istream &in) override;
-    void setFirstName(std::string data) override { firstName = data; }
-    void setLastName(std::string data) override { lastName = data; }
-    void setContact(bool data) { hasContact = data; }
-    void setEducation(bool data) { hasEducation = data; }
-    std::string getFirstName() const { return firstName; }
-    std::string getLastName() const { return lastName; }
-    bool getContact() const { return hasContact; }
-    bool getEducation() const { return hasEducation; }
+    void setFirstName(std::string data) override;
+    void setLastName(std::string data) override;
+    void setContact(bool data);
+    void setEducation(bool data);
+    [[nodiscard]] std::string getFirstName() const { return firstName; }
+    [[nodiscard]] std::string getLastName() const { return lastName; }
+    [[nodiscard]] bool getContact() const { return hasContact; }
+    [[nodiscard]] bool getEducation() const { return hasEducation; }
 private:
-    bool hasEducation;
-    bool hasContact;
+    bool hasEducation = false;
+    bool hasContact = false;
 };
 
 
