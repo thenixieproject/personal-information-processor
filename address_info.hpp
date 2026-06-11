@@ -1,13 +1,23 @@
-//
-// Created by lilmc on 6/11/2026.
-//
+#ifndef ADDRESS_INFO_HPP
+#define ADDRESS_INFO_HPP
 
-#ifndef PERSONAL_INFORMATION_PROCESSOR_ADDRESS_INFO_HPP
-#define PERSONAL_INFORMATION_PROCESSOR_ADDRESS_INFO_HPP
-
-
-class address_info {
+template <class T>
+class AddressInfo {
+public:
+    void setStreetAddress(T data) { streetAddress = data; }
+    void setCity(T data) { city = data; }
+    void setState(T data) { state = data; }
+    void setZip(T data) { zip = data; }
+    T getStreetAddress() const { return streetAddress; }
+    T getCity() const { return city; }
+    T getState() const { return state; }
+    T getZip() const { return zip; }
+private:
+    T streetAddress;
+    T city;
+    T state;
+    T zip;
 };
 
 
-#endif //PERSONAL_INFORMATION_PROCESSOR_ADDRESS_INFO_HPP
+#endif
