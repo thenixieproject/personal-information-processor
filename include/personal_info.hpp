@@ -11,10 +11,10 @@ public:
     PersonalInfo() = default;
     std::ostream& operator<<(std::ostream &out) const override;
     std::istream& operator>>(std::istream &in) override;
-    void setFirstName(std::string data) override;
-    void setLastName(std::string data) override;
-    void setContact(bool data);
-    void setEducation(bool data);
+    void setFirstName() override;
+    void setLastName() override;
+    void setContact();
+    void setEducation();
     [[nodiscard]] std::string getFirstName() const { return firstName; }
     [[nodiscard]] std::string getLastName() const { return lastName; }
     [[nodiscard]] bool getContact() const { return hasContact; }

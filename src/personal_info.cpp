@@ -11,7 +11,8 @@ std::istream& PersonalInfo::operator>>(std::istream &in) {
     return in;
 }
 
-void PersonalInfo::setFirstName(std::string data) {
+void PersonalInfo::setFirstName() {
+    std::string data;
     // Get data from user
     getline(std::cin, data);
 
@@ -23,8 +24,9 @@ void PersonalInfo::setFirstName(std::string data) {
     }
 }
 
-void PersonalInfo::setLastName(std::string data) {
-    // Get data from suer
+void PersonalInfo::setLastName() {
+    std::string data;
+    // Get data from user
     getline(std::cin, data);
 
     // Parse if valid
@@ -35,3 +37,42 @@ void PersonalInfo::setLastName(std::string data) {
     }
 }
 
+void PersonalInfo::setContact() {
+    // Local Variables
+    std::string promptResponse = " ";
+
+    // Data Input
+    getline(std::cin, promptResponse);
+
+    // Error Checking
+    if (promptResponse.empty()) {
+        throw std::string("Response cannot be empty");
+    } else if (tolower(promptResponse[0]) != 'y' && tolower(promptResponse[0]) != 'n') {
+        throw std::string("Response must be yes or no");
+    } else {
+        // Response parsing
+        if (tolower(promptResponse[0]) == 'y') {
+            hasContact = true;
+        } else {
+            hasContact = false;
+        }
+    }
+}
+
+void PersonalInfo::setEducation() {
+    std::string promptResponse = " ";
+
+    getline(std::cin, promptResponse);
+
+    if (promptResponse.empty()) {
+        throw std::string("Response cannot be empty");
+    } else if (tolower(promptResponse[0]) != 'y' && tolower(promptResponse[0]) != 'n') {
+        throw std::string("Response must be yes or no");
+    } else {
+        if (tolower(promptResponse[0]) == 'y') {
+            hasEducation = true;
+        } else {
+            hasEducation = false;
+        }
+    }
+}
