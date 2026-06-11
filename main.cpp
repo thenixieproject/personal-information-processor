@@ -30,7 +30,7 @@ int main(int argc, char** argv)
                 cout << "Enter first name of new person: ";
                 newPerson->setFirstName(newPerson->getFirstName());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;  
             }
@@ -42,7 +42,7 @@ int main(int argc, char** argv)
                 cout << "Enter last name of new person: ";
                 newPerson->setLastName(newPerson->getLastName());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
@@ -51,7 +51,7 @@ int main(int argc, char** argv)
         {
             newPerson->setDegree(newPerson->getDegree());
         }
-        catch(string exception)
+        catch(string &exception)
         {
             cerr << "Error: " << exception << endl;
         }
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
         {
             newPerson->setContactInfo(newPerson->getContactInfo());
         }
-        catch(string exception)
+        catch(string &exception)
         {
             cerr << "Error: " << exception << endl;
         }
@@ -72,7 +72,7 @@ int main(int argc, char** argv)
                 cout << "What is " << newPerson->getFirstName() << "'s education level? ";
                 newEducation.setDegreeType(newEducation.getDegreeType());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
@@ -81,7 +81,7 @@ int main(int argc, char** argv)
                 cout << "Where did " << newPerson->getFirstName() << " attend school? ";
                 newEducation.setSchoolName(newEducation.getSchoolName());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
@@ -90,7 +90,7 @@ int main(int argc, char** argv)
                 cout << "How many years did " << newPerson->getFirstName() << " attend " << newEducation.getSchoolName() << "? ";
                 newEducation.setYearsAttended(newEducation.getYearsAttended());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
@@ -99,7 +99,7 @@ int main(int argc, char** argv)
                 cout << "Did " << newPerson->getFirstName() << " graduate? ";
                 newEducation.setGraduated(newEducation.getGraduated());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
@@ -110,7 +110,7 @@ int main(int argc, char** argv)
             }
             catch(...)
             {
-                cerr << "Unknown Exception occured." << endl;
+                cerr << "Unknown Exception occurred." << endl;
             }
         }
         if(newPerson->getContactInfo() == true)
@@ -120,7 +120,7 @@ int main(int argc, char** argv)
                 cout << "Does " << newPerson->getFirstName() << " have a home phone: ";
                 newContact.askHomePhone(newContact.getHasHomePhone());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
@@ -131,7 +131,7 @@ int main(int argc, char** argv)
                     cout << "Enter " << newPerson->getFirstName() << "'s home phone: ";
                     newContact.setHomePhone(newContact.getHomePhone());
                 }
-                catch(string exception)
+                catch(string &exception)
                 {
                     cerr << "Error: " << exception << endl;
                 }
@@ -141,7 +141,7 @@ int main(int argc, char** argv)
                 cout << "Enter " << newPerson->getFirstName() << "'s cell phone: ";
                 newContact.setCellPhone(newContact.getCellPhone());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
@@ -150,7 +150,7 @@ int main(int argc, char** argv)
                 cout << "Enter " << newPerson->getFirstName() << "'s email: ";
                 newContact.setEmailAddress(newContact.getEmailAddress());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
@@ -159,7 +159,7 @@ int main(int argc, char** argv)
                 cout << "Does " << newPerson->getFirstName() << " have an address: ";
                 newContact.askAddress(newContact.getHasAddress());
             }
-            catch(string exception)
+            catch(string &exception)
             {
                 cerr << "Error: " << exception << endl;
             }
