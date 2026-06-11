@@ -8,7 +8,7 @@
 class ContactInfo : public AddressInfo<std::string> {
 public:
     ContactInfo() = default;
-    std::ostream& operator<<(std::ostream &out);
+    std::ostream& operator<<(std::ostream &out) const ;
     std::istream& operator>>(std::istream &in);
     virtual void setFirstName(std::string data) { firstName = data; }
     virtual void setLastName(std::string data) { lastName = data; }
