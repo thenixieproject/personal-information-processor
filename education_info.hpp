@@ -8,7 +8,7 @@
 class EducationInfo : public AddressInfo<std::string> {
 public:
     EducationInfo() = default;
-    std::ostream& operator<< (std::ostream &out);
+    std::ostream& operator<< (std::ostream &out) const;
     std::istream& operator>> (std::istream &in);
     void setDegreeType(std::string const &data) { degreeType = data; }
     void setGraduated(bool data) { graduated = data; }
