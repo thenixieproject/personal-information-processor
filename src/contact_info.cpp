@@ -1,4 +1,4 @@
-#include "contact_info.hpp"
+#include "../include/contact_info.hpp"
 #include <iostream>
 
 std::ostream& ContactInfo::operator<<(std::ostream &out) const {

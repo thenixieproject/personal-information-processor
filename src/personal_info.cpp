@@ -1,4 +1,4 @@
-#include "personal_info.hpp"
+#include "../include/personal_info.hpp"
 #include <iostream>
 
 std::ostream& PersonalInfo::operator<<(std::ostream &out) const {

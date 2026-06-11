@@ -1,4 +1,4 @@
-#include "education_info.hpp"
+#include "../include/education_info.hpp"
 #include <iostream>
 
 std::ostream& EducationInfo::operator<<(std::ostream& out) const {
