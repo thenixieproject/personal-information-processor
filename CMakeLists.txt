@@ -4,10 +4,10 @@ project(personal-information-processor)
 add_executable(personal-information-processor main.cpp)
 
 add_library(information-classes
-        ContactInfo.cpp
-        EducationInfo.cpp
-        PersonData.cpp
-        SchoolInfo.cpp
+        src/ContactInfo.cpp
+        src/EducationInfo.cpp
+        src/PersonData.cpp
+        src/SchoolInfo.cpp
 )
 
 target_link_libraries(personal-information-processor information-classes)
