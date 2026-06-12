@@ -46,7 +46,7 @@ int main(int argc, char** argv)
                 // Get First Name
                 std::cout << "Enter the person's first name: ";
                 try {
-                    person->setFirstName();
+                    person->getFirstName() = person->setString();
                 } catch (std::string &exception) {
                     std::cerr << "Error: " << exception << std::endl;
                 }
@@ -54,23 +54,45 @@ int main(int argc, char** argv)
                 // Get Last Name
                 std::cout << "Enter " << person->getFirstName() << "'s last name: ";
                 try {
-                    person->setLastName();
+                    person->getLastName() = person->setString();
                 } catch (std::string &exception) {
                     std::cerr << "Error: " << exception << std::endl;
                 }
 
                 // Ask if information is available
                 std::cout << "Does " << person->getFirstName() << " " << person->getLastName() << " have contact information? (Y/N): ";
-                person->setContact();
+                person->getContact() = person->setBoolean();
 
                 // Get information if it's available
                 if (person->getContact()) {
-                    //
+                    // Get Home Phone
+                    std::cout << "Enter " << person->getFirstName() << "'s home phone number (N/A if not available): ";
+                    try {
+                        person->getHomePhone() = person->setString();
+                    } catch (std::string &exception) {
+                        std::cerr << "Error: " << exception << std::endl;
+                    }
+
+                    // Get Cell Phone
+                    std::cout << "Enter " << person->getFirstName() << "'s cell phone number (N/A if not available): ";
+                    try {
+                        person->getCellPhone() = person->setString();
+                    } catch (std::string &exception) {
+                        std::cerr << "Error: " << exception << std::endl;
+                    }
+
+                    // Get email
+                    std::cout << "Enter " << person->getFirstName() << "'s email address (N/A if not available): ";
+                    try {
+                        person->getEmail() = person->setString();
+                    } catch (std::string &exception) {
+                        std::cerr << "Error: " << exception << std::endl;
+                    }
                 }
 
                 // Get Education Info
                 std::cout << "Does " << person->getFirstName() << " " << person->getLastName() << " have an education? (Y/N): ";
-                person->setEducation();
+                person->getEducation() = person->setBoolean();
 
                 /* Write Info to file */
 
