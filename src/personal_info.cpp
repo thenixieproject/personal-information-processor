@@ -11,17 +11,27 @@ std::istream& PersonalInfo::operator>>(std::istream &in) {
     return in;
 }
 
-std::string PersonalInfo::setString() {
+void PersonalInfo::setFirstName() {
     std::string data;
     getline(std::cin, data);
     if (data.empty()) {
         throw std::string("Response cannot be empty.");
     } else {
-        return data;
+        firstName = data;
     }
 }
 
-bool PersonalInfo::setBoolean() {
+void PersonalInfo::setLastName() {
+    std::string data;
+    getline(std::cin, data);
+    if (data.empty()) {
+        throw std::string("Response cannot be empty.");
+    } else {
+        lastName = data;
+    }
+}
+
+void PersonalInfo::setContact() {
     std::string data;
     getline(std::cin, data);
     if (data.empty()) {
@@ -30,9 +40,25 @@ bool PersonalInfo::setBoolean() {
         throw std::string("Response must be yes or no");
     } else {
         if (tolower(data[0]) == 'y') {
-            return true;
+            hasContact = true;
         } else {
-            return false;
+            hasContact = false;
+        }
+    }
+}
+
+void PersonalInfo::setEducation() {
+    std::string data;
+    getline(std::cin, data);
+    if (data.empty()) {
+        throw std::string("Response cannot be empty.");
+    } else if (tolower(data[0]) != 'y' && tolower(data[0]) != 'n') {
+        throw std::string("Response must be yes or no");
+    } else {
+        if (tolower(data[0]) == 'y') {
+            hasEducation = true;
+        } else {
+            hasEducation = false;
         }
     }
 }
