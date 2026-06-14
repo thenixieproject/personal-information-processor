@@ -10,14 +10,14 @@ public:
     EducationInfo() = default;
     virtual std::ostream& operator<< (std::ostream &out) const;
     virtual std::istream& operator>> (std::istream &in);
-    void setDegreeType(std::string const &data) { degreeType = data; }
-    void setGraduated(bool data) { graduated = data; }
-    void setYearsAttended(int data) { yearsAttended = data; }
-    void setSchoolName(std::string const &data) { schoolName = data; }
-    std::string getDegreeType() const { return degreeType; }
-    bool getGraduated() const { return graduated; }
-    int getYearsAttended() const { return yearsAttended; }
-    std::string getSchoolName() const { return schoolName; }
+    void setDegreeType();
+    void setGraduated();
+    void setYearsAttended();
+    void setSchoolName();
+    [[nodiscard]] std::string getDegreeType() const { return degreeType; }
+    [[nodiscard]] bool getGraduated() const { return graduated; }
+    [[nodiscard]] int getYearsAttended() const { return yearsAttended; }
+    [[nodiscard]] std::string getSchoolName() const { return schoolName; }
 private:
     std::string degreeType;
     bool graduated;
