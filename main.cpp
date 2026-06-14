@@ -47,7 +47,7 @@ int main(int argc, char** argv)
                 // Get First Name
                 std::cout << "Enter the person's first name: ";
                 try {
-                    person->getFirstName() = person->setString();
+                    person->setFirstName();
                 } catch (std::string &exception) {
                     std::cerr << "Error: " << exception << std::endl;
                 }
@@ -55,7 +55,7 @@ int main(int argc, char** argv)
                 // Get Last Name
                 std::cout << "Enter " << person->getFirstName() << "'s last name: ";
                 try {
-                    person->getLastName() = person->setString();
+                    person->setLastName();
                 } catch (std::string &exception) {
                     std::cerr << "Error: " << exception << std::endl;
                 }
@@ -63,14 +63,18 @@ int main(int argc, char** argv)
                 // Ask if information is available
                 std::cout << "Does " << person->getFirstName() << " " << person->getLastName() << " have contact "
                  << "information? (Y/N): ";
-                person->getContact() = person->setBoolean();
+                try {
+                    person->setContact();
+                } catch (std::string &exception) {
+                    std::cerr << "Error: " << exception << std::endl;
+                }
 
                 // Get information if it's available
                 if (person->getContact()) {
                     // Get Home Phone
                     std::cout << "Enter " << person->getFirstName() << "'s home phone number (N/A if not available): ";
                     try {
-                        person->getHomePhone() = person->setString();
+                        person->setHomePhone();
                     } catch (std::string &exception) {
                         std::cerr << "Error: " << exception << std::endl;
                     }
@@ -78,7 +82,7 @@ int main(int argc, char** argv)
                     // Get Cell Phone
                     std::cout << "Enter " << person->getFirstName() << "'s cell phone number (N/A if not available): ";
                     try {
-                        person->getCellPhone() = person->setString();
+                        person->setCellPhone();
                     } catch (std::string &exception) {
                         std::cerr << "Error: " << exception << std::endl;
                     }
@@ -86,7 +90,7 @@ int main(int argc, char** argv)
                     // Get email
                     std::cout << "Enter " << person->getFirstName() << "'s email address (N/A if not available): ";
                     try {
-                        person->getEmail() = person->setString();
+                        person->setEmail();
                     } catch (std::string &exception) {
                         std::cerr << "Error: " << exception << std::endl;
                     }
@@ -95,7 +99,32 @@ int main(int argc, char** argv)
                 // Get Education Info
                 std::cout << "Does " << person->getFirstName() << " " << person->getLastName() << " have an education? "
                  << "(Y/N): ";
-                person->getEducation() = person->setBoolean();
+                try {
+                    person->setEducation();
+                } catch (std::string &exception) {
+                    std::cerr << "Error: " << exception << std::endl;
+                }
+
+                // Get information if it's available
+                if (person->getEducation()) {
+                    // Get School name
+                    std::cout << "Where did " << person->getFirstName() << " go to school? (Enter N/A if not available): ";
+                    try {
+                        person->setSchoolName();
+                    } catch (std::string &exception) {
+                        std::cerr << "Error: " << exception << std::endl;
+                    }
+
+                    // Get School Address Info
+                    std::string addressResponse;
+
+                    std::cout << "Enter street address for " << person->getSchoolName() << "(Enter N/A if not available): ";
+                    try {
+
+                    } catch (std::string &exception) {
+                        std::cerr << "Error: " << exception << std::endl;
+                    }
+                }
 
                 /* Write Info to file */
 

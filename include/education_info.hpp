@@ -23,10 +23,6 @@ private:
     bool graduated;
     int yearsAttended;
     std::string schoolName;
-    std::string schoolStreetAddress;
-    std::string schoolCity;
-    std::string schoolState;
-    std::string schoolZip;
 };
 
 #endif
