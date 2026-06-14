@@ -10,7 +10,11 @@ public:
     ContactInfo() = default;
     virtual std::ostream& operator<<(std::ostream &out) const ;
     virtual std::istream& operator>>(std::istream &in);
-    virtual std::string setString();
+    virtual void setFirstName();
+    virtual void setLastName();
+    void setHomePhone();
+    void setCellPhone();
+    void setEmail();
     [[nodiscard]] std::string getHomePhone() const { return homePhone; }
     [[nodiscard]] std::string getCellPhone() const { return cellPhone; }
     [[nodiscard]] std::string getEmail() const { return email; }

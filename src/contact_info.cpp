@@ -12,12 +12,52 @@ std::istream& ContactInfo::operator>>(std::istream &in) {
     return in;
 }
 
-std::string setString() {
+void ContactInfo::setFirstName() {
     std::string data;
-    std::getline(std::cin, data);
+    getline(std::cin, data);
     if (data.empty()) {
-        throw std::string("Response cannot be empty");
+        throw std::string("Response cannot be empty.");
     } else {
-        return data;
+        firstName = data;
+    }
+}
+
+void ContactInfo::setLastName() {
+    std::string data;
+    getline(std::cin, data);
+    if (data.empty()) {
+        throw std::string("Response cannot be empty.");
+    } else {
+        lastName = data;
+    }
+}
+
+void ContactInfo::setHomePhone() {
+    std::string data;
+    getline(std::cin, data);
+    if (data.empty()) {
+        throw std::string("Response cannot be empty.");
+    } else {
+        homePhone = data;
+    }
+}
+
+void ContactInfo::setCellPhone() {
+    std::string data;
+    getline(std::cin, data);
+    if (data.empty()) {
+        throw std::string("Response cannot be empty.");
+    } else {
+        cellPhone = data;
+    }
+}
+
+void ContactInfo::setEmail() {
+    std::string data;
+    getline(std::cin, data);
+    if (data.empty()) {
+        throw std::string("Response cannot be empty.");
+    } else {
+        email = data;
     }
 }
