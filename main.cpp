@@ -11,7 +11,8 @@
 #include "include/address_info.hpp"
 
 // TODO: Add READ, UPDATE, and DELETE operations
-// TODO: Move content in FinalProjectDocumentation.pdf to README
+// TODO: Add actual content to README.md
+// TODO: Create a UML diagram for this using PlantUML and add to ../docs/ folder
 
 /* Driver Function */
 int main(int argc, char** argv)
@@ -37,7 +38,7 @@ int main(int argc, char** argv)
 
         // Main Menu switch case
         switch (mainMenu) {
-            case 1: // Create
+            case 1: // Create TODO: Finish implementing Create operations.
                 // Allocate Memory to the Pointer
                 person = new PersonalInfo();
 
