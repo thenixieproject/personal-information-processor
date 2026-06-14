@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-class PersonalInfo : protected ContactInfo, public EducationInfo {
+class PersonalInfo : public ContactInfo, public EducationInfo {
 public:
     PersonalInfo() = default;
     std::ostream& operator<<(std::ostream &out) const override;
