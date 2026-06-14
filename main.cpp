@@ -60,7 +60,8 @@ int main(int argc, char** argv)
                 }
 
                 // Ask if information is available
-                std::cout << "Does " << person->getFirstName() << " " << person->getLastName() << " have contact information? (Y/N): ";
+                std::cout << "Does " << person->getFirstName() << " " << person->getLastName() << " have contact "
+                 << "information? (Y/N): ";
                 person->getContact() = person->setBoolean();
 
                 // Get information if it's available
@@ -91,7 +92,8 @@ int main(int argc, char** argv)
                 }
 
                 // Get Education Info
-                std::cout << "Does " << person->getFirstName() << " " << person->getLastName() << " have an education? (Y/N): ";
+                std::cout << "Does " << person->getFirstName() << " " << person->getLastName() << " have an education? "
+                 << "(Y/N): ";
                 person->getEducation() = person->setBoolean();
 
                 /* Write Info to file */
